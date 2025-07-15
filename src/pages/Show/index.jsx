@@ -30,10 +30,10 @@ const Show = () => {
   }
 
   return (
-    <main className="w-full m-auto flex flex-col p-2 md:container">
-      <section className="w-full m-auto md:max-w-3xl">
-        <h1 className="text-2xl mb-2">Post por: {post.createdBy}</h1>
+    <main className="w-full max-w-3xl m-auto flex flex-col p-2">
+      <section className="w-full">
         <img src={post.photo} alt={post.title} className="w-full rounded mb-3" />
+        <h1 className="text-xl">Post por: {post.createdBy}</h1>
         <h2 className="text-3xl font-semibold mb-2">{post.title}</h2>
         <ul className="flex flex-wrap gap-1 my-3">
             {post.tags.map((tag) => (

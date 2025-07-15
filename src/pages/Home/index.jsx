@@ -4,6 +4,8 @@ import { db } from "../../firebase/config";
 import { collection, getDocs } from "firebase/firestore";
 import CardPost from "../../components/CardPost";
 
+import CardCarrossel from "../../components/CardCarrossel";
+
 function Home() {
   const [search, setSearch] = useState("");
   const [posts, setPosts] = useState([]);
@@ -35,6 +37,53 @@ function Home() {
 
   return (
     <main className="w-full m-auto flex flex-col p-2 md:container">
+      <div class="flex">
+        <div class="w-3/4 pl-8 pr-8 pb-8">
+          <CardCarrossel />
+        </div>
+        <div class="flex flex-col gap-3 w-1/4">
+
+
+          <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+            <a href="#">
+              <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                Aprendendo Desenvolvimento Web do Zero: Roteiro Passo a Passo
+              </h5>
+            </a>
+            <p class="mb-3 font-normal text-gray-700">
+              Post por: Denis
+            </p>
+          </div>
+
+          <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+            <a href="#">
+              <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                Desenvolvimento Web Full Stack: Vale a Pena se Tornar um?
+              </h5>
+            </a>
+            <p class="mb-3 font-normal text-gray-700">
+              Post por: Denis
+            </p>
+          </div>
+
+          <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+            <a href="#">
+              <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                Segurança na Web: Boas Práticas para Proteger Suas Aplicações
+              </h5>
+            </a>
+            <p class="mb-3 font-normal text-gray-700">
+              Post por: Denis
+            </p>
+          </div>
+
+
+
+
+
+        </div>
+      </div>
+
       <section className="w-full my-2">
         <form className="flex">
           <input
@@ -64,7 +113,6 @@ function Home() {
           </section>
         )
       )}
-
       <section className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {listPosts.map((post) => (
           <CardPost key={post.id} post={post} />
